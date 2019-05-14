@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Fiddle</title>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <div id="app">
+        <input type="text" v-on:input="changeTitle">
+
+
+        <p>{{ title }}</p>
+
+        <p>{{ sayHello() }}</p>
+
+        <p>{{ dataObjHello() }}</p>
+
+        <a v-bind:href="link">Google</a>
+
+        <p v-once>{{ title2 }}</p>
+
+        <p >{{ sayHello2() }}</p>
+
+        <p v-html="finLink"></p>
+
+        <button v-on:click="increase">Counter+</button>
+        <p>{{ counter }}</p>
+        
+        <p v-on:mousemove="updateCoordinates">Coordinates: {{ x }} / {{ y }}
+        <span v-on:mousemove="deadspot">DeadSpot</span></p>
+
+        <button v-on:click="increase2(2, $event)">Counter++</button>
+        <p>{{ counter2 }}</p>
+        <p>{{ screenY }}</p>
+        <p>{{ screenX }}</p>
+
+        <p v-on:mousemove="updateCoordinates">Coordinates: {{ x }} / {{ y }}
+        <span v-on:mousemove.stop="">DeadSpot2</span></p>
+        <!-- Used to Chain |  <span v-on:mousemove.stop.prevent="">DeadSpot2</span></p> -->
+
+        Hit space or enter: <input type="text" v-on:keyup.enter.space="alertMe">
+
+         <p><button v-on:click="counter3++">Counter3</button>
+       {{ counter3 * 2}} {{ counter3 *2 > 5 ? 'more than 5' : 'less than 5' }}</p>
+        
+
+
+
+
+
+
+    </div>
+
+
+
+    <script src="./js/fiddle.js"></script>
+</body>
+
+</html>
